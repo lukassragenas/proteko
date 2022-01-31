@@ -26,9 +26,9 @@ return [
     |                   usually this is equal to DELIS-Id. For sendbox usage use 0.
     | password      =>  The password of the user.
     */
-    'delisId'       =>env('DPD_delisId',''),
-    'customerUid'   =>env('DPD_customerUid',''),
-    'password'      =>env('DPD_password',''),
+    'delisId'       =>env('DPD_delisId','ICPROTEKO'),
+    'customerUid'   =>env('DPD_customerUid','aJ6iepia'),
+    'password'      =>env('DPD_password','3001557'),
 
     /*
     |--------------------------------------------------------------------------

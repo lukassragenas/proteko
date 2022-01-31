@@ -368,9 +368,7 @@
 .datagrid-filters .filter-right{
     float:right
 }
-.datagrid-filters .dropdown-filters{
-    display:inline-block
-}
+
 .datagrid-filters .dropdown-filters.per-page{
     margin-right:10px
 }
@@ -385,6 +383,7 @@
     margin:0
 }
 @media only screen and (max-width:1192px){
+  
     .datagrid-filters{
         flex-direction:column;
         margin-bottom:unset
@@ -393,6 +392,14 @@
         margin-bottom:10px
     }
 }
+
+@media only screen and (min-width:750px){
+    .datagrid-filters .dropdown-filters{
+        display:inline-block;
+    }
+}
+
+
 @media only screen and (max-width:720px){
     .datagrid-filters .dropdown-filters{
         margin-bottom:5px
@@ -429,8 +436,9 @@
     float:right
 }
 @media only screen and (max-width:720px){
-    .search-filter .control{
-        width:100px
+
+    .grid-dropdown-header {
+        width: 100% !important;
     }
 }
 .grid-dropdown-header{
@@ -611,7 +619,7 @@ a:active,a:focus,a:hover,a:link,a:visited{
     color:#fff
 }
 ::selection{
-    background-color:rgba(0,64,255,.6);
+    background-color:#FF7900;
     color:#fff
 }
 textarea{
@@ -682,8 +690,12 @@ h5{
     font-size:16px
 }
 .btn.btn-primary{
-    background:#0041ff;
-    color:#fff
+    text-transform: uppercase;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;        
+    border: 1px solid rgba(17, 24, 39);
 }
 .btn.btn-black{
     background:#000;
@@ -962,7 +974,6 @@ h5{
     right:1px
 }
 .control-group{
-    margin-bottom:25px;
     font-size:15px;
     width:750px;
     max-width:100%;
@@ -1110,10 +1121,10 @@ h5{
     transition:.2s
 }
 .control-group input:checked+.slider{
-    background-color:#0041ff
+    background-color:#FF7900;
 }
 .control-group input:focus+.slider{
-    box-shadow:0 0 1px #0041ff
+    box-shadow:0 0 1px #FF7900;
 }
 .control-group input:checked+.slider:before{
     transform:translateX(26px)
@@ -1124,10 +1135,7 @@ h5{
 .control-group .slider.round:before{
     border-radius:50%
 }
-.button-group{
-    margin-top:20px;
-    margin-bottom:20px
-}
+
 .alert-wrapper{
     width:300px;
     top:10px;
@@ -1188,7 +1196,7 @@ h5{
     display:block
 }
 .tabs ul li.active a{
-    border-bottom:3px solid #0041ff
+    border-bottom:3px solid #FF7900;
 }
 .accordian,accordian{
     display:inline-block;

@@ -23,13 +23,21 @@ Vue.use(VueCarousel);
 Vue.use(BootstrapSass);
 Vue.use(VeeValidate, {
     dictionary: {
+        en: {
+            attributes: {
+                email: 'DASDAS'
+            }
+        },
+        lt: lt,
         ar: ar,
         de: de,
         fa: fa,
         fr: fr,
         nl: nl,
         tr: tr
-    }
+    },
+    events: 'input|change|blur',
+
 });
 
 /**

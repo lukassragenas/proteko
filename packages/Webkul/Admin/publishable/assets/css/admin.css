@@ -108,7 +108,7 @@ body{
     color:#a2a2a2
 }
 .navbar-left ul.menubar li.menu-item.active a{
-    color:#0041ff
+    color:#FF7900;
 }
 .navbar-left ul.menubar li.menu-item span{
     display:block;
@@ -721,7 +721,8 @@ body{
     background-color:#fbfbfb
 }
 .btn.btn-primary{
-    background:#0041ff
+    background:#FF7900;
+    color: #000;
 }
 .btn.btn-danger{
     background:red

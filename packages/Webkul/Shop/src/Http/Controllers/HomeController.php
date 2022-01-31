@@ -2,10 +2,11 @@
 
 namespace Webkul\Shop\Http\Controllers;
 
+use Webkul\Category\Models\Category;
+use Webkul\Customer\Models\Wishlist;
 use Webkul\Shop\Http\Controllers\Controller;
 use Webkul\Core\Repositories\SliderRepository;
 use Webkul\Product\Repositories\SearchRepository;
-use Webkul\Category\Models\Category;
 
 
 class HomeController extends Controller
@@ -51,9 +52,10 @@ class HomeController extends Controller
     {
         $sliderData = $this->sliderRepository->getActiveSliders();
         $categories = Category::all();
+        $wishlist_items = Wishlist::all();
 
 
-        return view($this->_config['view'], compact('sliderData', 'categories'));
+        return view($this->_config['view'], compact('sliderData', 'categories', 'wishlist_items'));
     }
 
     /**

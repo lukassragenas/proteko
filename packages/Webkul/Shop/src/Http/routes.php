@@ -12,6 +12,10 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
         'view' => 'shop::home.contact'
     ])->name('shop.home.contact');
 
+    Route::get('/pdf-test', 'Webkul\Shop\Http\Controllers\ContactController@index')->defaults('_config', [
+        'view' => 'shop::home.pdf-test'
+    ])->name('shop.home.pdf-test');
+
     Route::get('/apmokejimas', 'Webkul\Shop\Http\Controllers\ContactController@index')->defaults('_config', [
         'view' => 'shop::home.checkout'
     ])->name('shop.home.checkout');
@@ -28,6 +32,14 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
         'view' => 'shop::home.privacy-policy'
     ])->name('shop.home.privacy-policy');
 
+    Route::get('/slapukai', 'Webkul\Shop\Http\Controllers\ContactController@index')->defaults('_config', [
+        'view' => 'shop::home.cookies'
+    ])->name('shop.home.cookies');
+
+    Route::get('/paslaugos', 'Webkul\Shop\Http\Controllers\ContactController@index')->defaults('_config', [
+        'view' => 'shop::home.services'
+    ])->name('shop.home.services');
+
 
 
 
@@ -36,7 +48,7 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
     /**
      * Store front search.
      */
-    Route::get('/search', 'Webkul\Shop\Http\Controllers\SearchController@all')->defaults('_config', [
+    Route::get('/search', 'Webkul\Shop\Http\Controllers\SearchController@index')->defaults('_config', [
         'view' => 'shop::search.search'
     ])->name('shop.search.index');
     

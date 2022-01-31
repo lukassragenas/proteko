@@ -12,7 +12,7 @@
             ></image-item>
         </div>
 
-        <label class="border bg-white border-black uppercase border border-black btn-light-outline" style="display: inline-block; width: auto" @click="createFileType">Pridėti nuotrauką</label>
+        <label class="add-img border bg-white border-black uppercase border border-black btn-light-outline" style="display: inline-block; width: auto" @click="createFileType">Pridėti nuotrauką</label>
     </div>
 </template>
 

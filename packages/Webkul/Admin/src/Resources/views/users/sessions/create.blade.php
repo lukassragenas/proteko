@@ -29,12 +29,12 @@
                         <span class="control-error" v-if="errors.has('password')">@{{ errors.first('password') }}</span>
                     </div>
 
-                    <div class="control-group">
+                    <div class="control-group my-4">
                         <a href="{{ route('admin.forget-password.create') }}">Pamiršote slaptažodį?</a>
                     </div>
 
                     <div class="button-group">
-                        <button class="btn-light-outline uppercase">Prisijungti</button>
+                        <button class="uppercase border border-gray-900 px-12 py-2 my-8 text-center font-thin rounded-none">Prisijungti</button>
                     </div>
                 </form>
 

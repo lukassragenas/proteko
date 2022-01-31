@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Storage;
 use Webkul\Admin\Http\Requests\ConfigurationForm;
 use Webkul\Core\Repositories\CoreConfigRepository;
+use CodeZero\DotEnvUpdater\DotEnvUpdater;
 
 class ConfigurationController extends Controller
 {
@@ -113,6 +114,15 @@ class ConfigurationController extends Controller
      */
     public function store(ConfigurationForm $request)
     {
+        
+        if(@$request->sales["shipping"]['origin']){
+            $env = new DotEnvUpdater(base_path('.env'));
+            $env->set('DPD_delisId', @$request->sales["shipping"]['origin']['delis-id']);
+            $env->set('DPD_customerUid', @$request->sales["shipping"]['origin']['customerUid']);
+            $env->set('DPD_password', @$request->sales["shipping"]['origin']['password']);
+            $env->set('DPD_sandbox', @$request->sales["shipping"]['origin']['sandbox']==1);
+            $env->set('DPD_saturdayDelivery', @$request->sales["shipping"]['origin']['saturdayDelivery']==1);
+        }
         Event::dispatch('core.configuration.save.before');
 
         $this->coreConfigRepository->create($request->except(['_token', 'admin_locale']));
